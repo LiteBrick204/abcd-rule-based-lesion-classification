@@ -8,7 +8,7 @@ To run it locally, run the following commands:
   git clone https://github.com/LiteBrick204/skin-lesion-classification/edit/main/README.md
   cd skin-lesion-classification
   pip install -r requirements.txt
-  export FLASK_APP=app`
+  export FLASK_APP=app
   export FLASK_ENV=project_env
   flask run
 ```
