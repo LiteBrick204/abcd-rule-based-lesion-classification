@@ -5,13 +5,11 @@ from tensorflow.keras.preprocessing import image
 from flask import Flask,render_template,request
 
 import cv2
-import numpy as np
-from playsound import playsound
 from flask import Flask, render_template
 
 app=Flask(__name__)
 
-model=load_model("ffd_model.h5")
+model=load_model("model")
   
 @app.route('/')
 def index():
@@ -21,9 +19,7 @@ text=''
 def upload():
     if request.method=='POST':
         f=request.files['image']
-        filepath=os.path.join('static/',f.filename)
-        f.save(filepath)
-        img=image.load_img(filepath,target_size=(,))
+        img=image.load_img(f,target_size=(,))
         x=image.img_to_array(img)
         x = np.expand_dims(x,axis=0)
         pred = model.predict(x)
