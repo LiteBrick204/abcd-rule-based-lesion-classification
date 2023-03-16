@@ -9,7 +9,7 @@ from flask import Flask, render_template
 
 app=Flask(__name__)
 
-model=load_model("model")
+model=load_model("predicter.h5")
   
 @app.route('/')
 def index():
